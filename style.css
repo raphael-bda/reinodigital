@@ -1,0 +1,458 @@
+/* Estilos Globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #E6F0FF;
+    color: #5A76B8;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Parisienne', cursive;
+    color: #7A9BFF;
+}
+
+/* Estilo para o logotipo no topo */
+#site-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    max-height: 180px;
+    border-radius: 15px;
+}
+
+/* Cabeçalho */
+header {
+    padding-top: 10px;
+    text-align: center;
+    background-color: #BCCEF8;
+    padding-bottom: 1em;
+    box-shadow: 0 3px 6px rgba(100, 130, 200, 0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+}
+
+header h1 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 2.4em;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 3px rgba(70, 90, 150, 0.25);
+}
+
+/* Navegação Desktop */
+nav ul#nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin:0; /* Adicionado para reset */
+}
+
+nav ul#nav-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul#nav-links li a {
+    text-decoration: none;
+    color: #F0F8FF;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul#nav-links li a:hover,
+nav ul#nav-links li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    border-bottom: none;
+}
+
+/* Estilos para o botão do menu hambúrguer (base) */
+#menu-toggle {
+    display: none; /* Escondido em telas grandes por padrão */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute; /* Posicionamento será ajustado na media query */
+    z-index: 1001; /* Para ficar acima de outros elementos do header */
+}
+
+#menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+/* Estilo para o corpo quando o menu mobile estiver aberto */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 25px;
+    max-width: 850px;
+    margin: 25px auto;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(100, 130, 200, 0.12);
+}
+
+.content-section {
+    display: block;
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-photo {
+    max-width: 25%;
+    height: auto;
+    border-radius: 20px;
+    margin: 20px auto;
+    box-shadow: 0 6px 12px rgba(106, 142, 232, 0.15);
+}
+
+.music-note {
+    font-style: italic;
+    color: #7A9BFF;
+}
+
+/* Estilos da Linha do Tempo */
+.timeline-item {
+    background-color: #F0F5FF;
+    border-left: 5px solid #BCCEF8;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(100, 130, 200, 0.08);
+}
+
+.timeline-item h3 {
+    margin-top: 0;
+    color: #7A9BFF;
+    font-size: 1.6em;
+}
+
+.timeline-item p {
+    color: #4E628C;
+    line-height: 1.7;
+}
+
+.timeline-item::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Estilos da Galeria */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    align-items: start;
+}
+
+.gallery-grid figure {
+    margin: 0;
+    background-color: #F0F5FF;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(100, 130, 200, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 100%;
+    max-width: 220px;
+    box-sizing: border-box;
+}
+
+.gallery-grid figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(100, 130, 200, 0.12);
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.gallery-grid figcaption {
+    font-size: 0.9em;
+    color: #5A76B8;
+    margin-top: 8px;
+}
+
+/* Estilos da Trilha Sonora */
+.song-item {
+    background-color: #F0F5FF;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 3px 8px rgba(100, 130, 200, 0.08);
+}
+.song-item h3 {
+    margin-top: 0;
+}
+.song-item a, .timeline-item a {
+    display: inline-block;
+    background-color: #7A9BFF;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+.song-item a:hover, .timeline-item a:hover {
+    background-color: #6A8EE8;
+    transform: translateY(-2px);
+}
+
+/* Estilos da Carta */
+.letter-content {
+    text-align: left;
+    background-color: #F8FAFF;
+    padding: 25px;
+    border: 2px dashed #BCCEF8;
+    border-radius: 20px;
+    font-family: 'Georgia', serif;
+    box-shadow: 0 2px 5px rgba(100, 130, 200, 0.06);
+}
+.letter-content p {
+    margin-bottom: 1.2em;
+    color: #4E628C;
+    line-height: 1.7;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #BCCEF8;
+    color: #FFFFFF;
+    font-size: 0.9em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* --- ESTILOS PARA O OVERLAY NA CARTA --- */
+.hover-effect-container {
+    position: relative; /* Essencial para posicionar o overlay */
+    overflow: hidden; /* Garante que o overlay fique dentro do container */
+    cursor: help; /* Para indicar que há algo ao passar o mouse */
+}
+
+.letter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(90, 118, 184, 0.95); /* Fundo azul translúcido */
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box; /* Para que o padding não aumente a largura/altura */
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Esconde completamente para não interferir com cliques */
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out; /* Transição suave */
+    border-radius: 20px; /* Igual ao .letter-content */
+    text-align: center;
+}
+
+.hover-effect-container:hover .letter-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.letter-overlay p {
+    color: #FFFFFF; /* Garante que o texto dentro do overlay seja branco */
+    margin-bottom: 0.8em; /* Ajuste o espaçamento entre os parágrafos do overlay */
+    line-height: 1.5;
+}
+
+
+/* --- RESPONSIVIDADE PARA MOBILE --- */
+@media (max-width: 768px) {
+
+    #site-logo {
+        max-height: 100px;
+        margin-bottom: 10px;
+    }
+
+    header {
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    header h1 {
+        font-size: 1.9em;
+        margin-bottom: 10px;
+    }
+    
+    /* Navegação Mobile (Menu Hambúrguer) - COM CORREÇÕES */
+    #menu-toggle {
+        display: block !important;
+        top: 12px; 
+        right: 10px;
+    }
+
+    /* Esconder navegação desktop no mobile */
+    nav ul#nav-links li {
+        display: none !important;
+    }
+    
+    /* Estilos para o container do menu mobile quando aberto */
+    nav ul#nav-links.active {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important; 
+        justify-content: center !important; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(80, 100, 160, 0.97);
+        padding: 70px 0 20px 0; 
+        margin: 0; 
+        list-style-type: none; 
+        z-index: 1000;
+        overflow-y: auto;
+        box-sizing: border-box; 
+    }
+    nav ul#nav-links:not(.active) {
+        display: none !important;
+    }
+
+
+    /* Estilo para os ITENS da lista (<li>) DENTRO DO MENU MOBILE ATIVO */
+    nav ul#nav-links.active li {
+        display: block !important; 
+        width: 100%; 
+        margin: 15px 0 !important; 
+        text-align: center !important; 
+    }
+
+    /* Estilo para os LINKS (<a>) DENTRO DO MENU MOBILE ATIVO */
+    nav ul#nav-links.active li a {
+        display: inline-block; 
+        font-size: 1.4em;
+        color: #FFFFFF;
+        padding: 12px 25px; 
+        border-radius: 25px;
+        text-decoration: none; 
+        border-bottom: none !important; 
+        width: auto; 
+        max-width: 80%; 
+        transition: background-color 0.2s ease, color 0.2s ease; 
+    }
+
+    nav ul#nav-links.active li a:hover,
+    nav ul#nav-links.active li a.active {
+        background-color: rgba(255, 255, 255, 0.2); 
+        color: #E6F0FF;
+    }
+
+
+    /* Animação do ícone hambúrguer para "X" */
+    #menu-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+
+    /* Conteúdo Principal Mobile */
+    main {
+        padding: 15px;
+        margin: 15px auto;
+        border-radius: 20px;
+    }
+
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    
+    p, figcaption, .letter-content p, .song-item p {
+        font-size: 0.92em;
+    }
+
+    /* Fotos e Imagens Mobile */
+    .main-photo {
+        max-width: 90%;
+        border-radius: 15px;
+    }
+
+    .timeline-item {
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+    }
+
+    /* Botões Mobile */
+    .song-item a, .timeline-item a {
+        padding: 12px 22px;
+        font-size: 0.95em;
+        border-radius: 22px;
+    }
+
+    /* Carta Mobile */
+    .letter-content {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    /* Ajustes para mobile no overlay da carta */
+    .letter-overlay p {
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+    }
+
+    /* Rodapé Mobile */
+    footer {
+        padding: 20px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+}
